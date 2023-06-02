@@ -40,36 +40,36 @@ export function Header() {
 
   return (
     <header
-      class={`w-full flex h-[72px] justify-between z-20 p-2 items-center fixed top-0 transition-all duration-500 ${showHeader}`}
+      className={`w-full flex h-[72px] justify-between z-20 p-2 items-center fixed top-0 transition-all duration-500 ${showHeader}`}
     >
       <a
         href="/"
-        class="w-14 h-14 md:hover:-translate-y-[1px] transition-transform duration-300"
+        className="w-14 h-14 md:hover:-translate-y-[1px] transition-transform duration-300"
       >
         <svg
-          class="logo__svg"
+          className="logo__svg"
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            class="logo__path"
+            className="logo__path"
             d="M 50, 50 m -40, 0 a 40,40 0 1,0 80,0 a 40,40 0 1,0 -80,0"
           ></path>
         </svg>
       </a>
 
       <nav
-        class={`flex bg-blanco rounded-t-3xl md:bg-transparent fixed md:static top-[72px] left-0 right-0 h-screen md:h-auto transition-all translate-x-full md:translate-x-0 duration-500 opacity-0 ${
+        className={`flex bg-blanco rounded-t-3xl md:bg-transparent fixed md:static top-[72px] left-0 right-0 h-screen md:h-auto transition-all translate-x-full md:translate-x-0 duration-500 opacity-0 md:opacity-100 ${
           menuIsOpen ? 'translate-x-0 opacity-100' : ''
         }`}
       >
-        <ul class="flex flex-col md:flex-row gap-4 w-full items-center mt-14 md:mt-0">
-          <li class="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
+        <ul className="flex flex-col md:flex-row gap-4 w-full items-center mt-14 md:mt-0">
+          <li className="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
             <a href="#inicio" className="w-full inline-block text-center py-4">
               Inicio
             </a>
           </li>
-          <li class="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
+          <li className="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
             <a
               href="#nosotros"
               className="w-full inline-block text-center py-4"
@@ -77,16 +77,16 @@ export function Header() {
               Nostros
             </a>
           </li>
-          <li class="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
+          <li className="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
             <a href="#equipos" className="w-full inline-block text-center py-4">
               Equipos
             </a>
           </li>
 
-          <li class="md:hidden font-medium hover:text-aguamarina transition-colors duration-300 w-full flex justify-center mt-4">
+          <li className="md:hidden font-medium hover:text-aguamarina transition-colors duration-300 w-full flex justify-center mt-4">
             <a
               href="tel:57123456789"
-              class="font-medium px-3 py-2 w-full max-w-max inline-block text-center bg-aguamarina rounded-md text-white hover:bg-aguamarina/80 transition-colors duration-300"
+              className="font-medium px-3 py-2 w-full max-w-max inline-block text-center bg-aguamarina rounded-md text-white hover:bg-aguamarina/80 transition-colors duration-300"
             >
               +57 123456789
             </a>
@@ -96,13 +96,13 @@ export function Header() {
 
       <a
         href="tel:57123456789"
-        class="hidden md:block font-medium px-3 py-2 bg-aguamarina rounded-md text-white hover:bg-aguamarina/80 transition-colors duration-300"
+        className="hidden md:block font-medium px-3 py-2 bg-aguamarina rounded-md text-white hover:bg-aguamarina/80 transition-colors duration-300"
       >
         +57 123456789
       </a>
 
       <button
-        class={`md:hidden w-8 h-8 flex items-center justify-center border-none outline-none appearance-none ${
+        className={`md:hidden w-8 h-8 flex items-center justify-center border-none outline-none appearance-none ${
           menuIsOpen ? 'open' : ''
         }`}
         onClick={() => setMenuIsOpen(!menuIsOpen)}
