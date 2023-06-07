@@ -1,0 +1,146 @@
+---
+import Wrapper from './Wrapper.astro'
+import { Facebook, Instagram, Twitter } from './Icons'
+
+const facebookUser = 'user'
+const twitterUser = 'user'
+const instagramUser = 'user'
+---
+
+<footer class="bg-marino text-white pt-14 pb-3 mt-20">
+  <Wrapper
+    className="flex justify-between flex-col lg:flex-row gap-[50px] md:gap-0"
+  >
+    {/* LEFT START */}
+    <div
+      class="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row"
+    >
+      {/* MENU START */}
+      <div class="flex flex-col gap-3 shrink-0">
+        <a
+          href="#"
+          class="font-oswald font-bold uppercase text-sm cursor-pointer"
+        >
+          Servicios
+        </a>
+        <a
+          href="#"
+          class="font-oswald font-bold uppercase text-sm cursor-pointer"
+        >
+          Equipos
+        </a>
+      </div>
+      {/* MENU END */}
+
+      {/* NORMAL MENU START */}
+      <div
+        class="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-wrap shrink-0"
+      >
+        {/* MENU START */}
+        <div class="flex flex-col gap-3">
+          <h3 class="font-oswald font-bold uppercase text-sm">Contáctanos</h3>
+          <a
+            href="mailto:servicio.cliente@redyprinterx.com"
+            class="text-sm text-blanco hover:text-white cursor-pointer transition-colors duration-300"
+          >
+            servicio.cliente@redyprinterx.com
+          </a>
+          <a
+            href="tel:5718149604"
+            class="text-sm text-blanco hover:text-white cursor-pointer transition-colors duration-300"
+          >
+            (+57) 18149604
+          </a>
+          <a
+            href="tel:3184165736"
+            class="text-sm text-blanco hover:text-white cursor-pointer transition-colors duration-300"
+          >
+            (+57) 3184165736
+          </a>
+          <p class="text-sm text-blanco transition-colors duration-300">
+            NIT. 900151787-1
+          </p>
+        </div>
+        {/* MENU END */}
+
+        {/* MENU START */}
+        <div class="flex flex-col gap-3">
+          <h3 class="font-oswald font-bold uppercase text-sm">Visitanos</h3>
+          <p
+            class="text-sm text-blanco transition-colors duration-300 max-w-[200px]"
+          >
+            Calle 7 B # 78 – 77 oficina 202. Bogotá – Colombia.
+          </p>
+        </div>
+        {/* MENU END */}
+      </div>
+      {/* NORMAL MENU END */}
+    </div>
+    {/* LEFT END */}
+
+    {/* RIGHT START */}
+    <div
+      class="flex gap-4 justify-center lg:justify-start pt-0 md:pt-10 lg:pt-0"
+    >
+      <a
+        href={`https://facebook.com/${facebookUser}`}
+        target="_blank"
+        title="facebook"
+        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
+      >
+        <Facebook />
+      </a>
+      <a
+        href={`https://twitter.com/${twitterUser}`}
+        target="_blank"
+        title="twitter"
+        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
+      >
+        <Twitter />
+      </a>
+      <a
+        href={`https://instagram.com/${instagramUser}`}
+        target="_blank"
+        title="instagram"
+        class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
+      >
+        <Instagram />
+      </a>
+    </div>
+    {/* RIGHT END */}
+  </Wrapper>
+  <Wrapper
+    className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0"
+  >
+    {/* LEFT START */}
+    <p class="text-[12px] text-blanco text-center md:text-left">
+      © {new Date().getFullYear()} Red y Printerx. Todos los derechos reservados.
+    </p>
+    {/* LEFT END */}
+
+    {/* RIGHT START */}
+    <div
+      class="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center"
+    >
+      <a
+        href="#"
+        class="text-[12px] text-blanco transition-colors duration-300 hover:text-white cursor-pointer"
+      >
+        Terminos de venta
+      </a>
+      <a
+        href="#"
+        class="text-[12px] text-blanco transition-colors duration-300 hover:text-white cursor-pointer"
+      >
+        Terminos de uso
+      </a>
+      <a
+        href="#"
+        class="text-[12px] text-blanco transition-colors duration-300 hover:text-white cursor-pointer"
+      >
+        Política de privacidad
+      </a>
+    </div>
+    {/* RIGHT END */}
+  </Wrapper>
+</footer>

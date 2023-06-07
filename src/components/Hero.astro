@@ -1,5 +1,39 @@
+---
+import heroImg from '../../public/hero.webp'
+---
+
 <main
-  class="h-[500vh] mt-[72px] bg-blanco rounded-t-3xl grid place-content-center"
+  class="h-max pb-20 lg:pb-0 lg:h-[calc(80vh-72px)] mt-[72px] bg-blanco rounded-t-3xl grid place-content-center container mx-auto"
 >
-  hola
+  <div class="flex flex-col lg:flex-row items-center px-2 md:px-16 md:gap-5">
+    <img
+      src={heroImg}
+      loading="lazy"
+      alt="Imagen de fondo"
+      class="md:w-[450px] md:h-[450px] aspect-square object-contain lg:order-2"
+    />
+
+    <section>
+      <h1
+        class="text-[clamp(20%,6vw,3rem)] text-center lg:text-left md:order-1 lg:max-w-[65ch] font-bold leading-tight"
+      >
+        Servicios y Asesorías para Equipos Carestream. <span class="text-cielo"
+          >Redyprinterx.</span
+        >
+      </h1>
+
+      <p class="lg:max-w-[50ch] mt-5 text-center lg:text-left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga totam enim
+        distinctio modi recusandae obcaecati consectetur, voluptatibus minus
+        nobis corporis.
+      </p>
+
+      <a
+        href="#"
+        class="bg-cielo hover:bg-cielo/80 transition-colors duration-300 text-blanco px-4 py-2 rounded-md mt-5 inline-block w-full lg:w-max text-center"
+      >
+        Ver servicios</a
+      >
+    </section>
+  </div>
 </main>

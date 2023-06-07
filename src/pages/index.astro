@@ -2,9 +2,17 @@
 import Layout from '../layouts/Layout.astro'
 import { Header } from '../components/Header.jsx'
 import Hero from '../components/Hero.astro'
+import Brands from '../components/Brands.astro'
+import Section1 from '../components/Section1.astro'
+import Section2 from '../components/Section2.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout title="Red y Printerx">
   <Header client:load />
   <Hero />
+  <Brands />
+  <Section1 />
+  <Section2 />
+  <Footer />
 </Layout>

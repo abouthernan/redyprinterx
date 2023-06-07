@@ -11,7 +11,7 @@ export function Header() {
       if (window.scrollY > lastScrollY) {
         setShowHeader('-translate-y-[72px]')
       } else {
-        setShowHeader('shadow-sm')
+        setShowHeader('shadow-sm bg-white')
       }
     } else {
       setShowHeader('translate-y-0')
@@ -64,12 +64,12 @@ export function Header() {
         }`}
       >
         <ul className="flex flex-col md:flex-row gap-4 w-full items-center mt-14 md:mt-0">
-          <li className="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
+          <li className="font-medium hover:text-cielo/80 transition-colors duration-300 w-full">
             <a href="#inicio" className="w-full inline-block text-center py-4">
               Inicio
             </a>
           </li>
-          <li className="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
+          <li className="font-medium hover:text-cielo/80 transition-colors duration-300 w-full">
             <a
               href="#nosotros"
               className="w-full inline-block text-center py-4"
@@ -77,16 +77,16 @@ export function Header() {
               Nostros
             </a>
           </li>
-          <li className="font-medium hover:text-aguamarina transition-colors duration-300 w-full">
+          <li className="font-medium hover:text-cielo/80 transition-colors duration-300 w-full">
             <a href="#equipos" className="w-full inline-block text-center py-4">
               Equipos
             </a>
           </li>
 
-          <li className="md:hidden font-medium hover:text-aguamarina transition-colors duration-300 w-full flex justify-center mt-4">
+          <li className="md:hidden font-medium hover:text-cielo/80 transition-colors duration-300 w-full flex justify-center mt-4">
             <a
               href="tel:57123456789"
-              className="font-medium px-3 py-2 w-full max-w-max inline-block text-center bg-aguamarina rounded-md text-white hover:bg-aguamarina/80 transition-colors duration-300"
+              className="font-medium px-3 py-2 w-full max-w-max inline-block text-center bg-cielo rounded-md text-white hover:bg-cielo/80 transition-colors duration-300"
             >
               +57 123456789
             </a>
@@ -96,7 +96,7 @@ export function Header() {
 
       <a
         href="tel:57123456789"
-        className="hidden md:block font-medium px-3 py-2 bg-aguamarina rounded-md text-white hover:bg-aguamarina/80 transition-colors duration-300"
+        className="hidden md:block font-medium px-3 py-2 bg-cielo rounded-md text-white hover:bg-cielo/80 transition-colors duration-300"
       >
         +57 123456789
       </a>
