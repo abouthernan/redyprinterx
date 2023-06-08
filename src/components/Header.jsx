@@ -74,7 +74,7 @@ export function Header() {
               href="#nosotros"
               className="w-full inline-block text-center py-4"
             >
-              Nostros
+              Nosotros
             </a>
           </li>
           <li className="font-medium hover:text-cielo/80 transition-colors duration-300 w-full">
