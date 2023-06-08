@@ -4,6 +4,7 @@ import { Cog, Shield } from './Icons.jsx'
 
 <section
   class="bg-white rounded-t-3xl -mt-5 container mx-auto pt-10 lg:pt-20 pb-20 lg:pb-28 flex flex-col md:flex-row justify-between items-start px-2 md:px-12 gap-y-14 md:gap-y-0 gap-x-8"
+  id="features1"
 >
   <div class="md:w-1/2 text-center md:text-left">
     <h2 class="text-[clamp(1.8rem,8vw,3rem)] font-medium">Lorem, ipsum</h2>
@@ -45,3 +46,26 @@ import { Cog, Shield } from './Icons.jsx'
     </div>
   </div>
 </section>
+
+<script lang="javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const features1 = document.getElementById('features1')
+
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(
+            'animate-in',
+            'slide-in-from-bottom-6',
+            'duration-1000'
+          )
+          console.log('Agregando clase')
+          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback)
+    observer.observe(features1)
+  })
+</script>

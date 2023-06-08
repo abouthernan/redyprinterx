@@ -40,7 +40,7 @@ export function Header() {
 
   return (
     <header
-      className={`w-full flex h-[72px] justify-between z-20 p-2 items-center fixed top-0 transition-all duration-500 ${showHeader}`}
+      className={`w-full flex h-[72px] justify-between z-20 p-2 items-center fixed top-0 transition-all duration-500 ${showHeader} animate-in fade-in duration-1000`}
     >
       <a
         href="/"
