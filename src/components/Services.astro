@@ -1,0 +1,58 @@
+---
+const services = [
+  'Mantenimiento e instalación de equipos',
+  'Acceso remoto',
+  'Calibración de equipos',
+  'Reparación de equipos',
+  'Venta y remplazo de equipos',
+  'Activación y configuración de software con licenciamiento',
+  'Montaje y desmontaje de equipos'
+]
+---
+
+<div class="container block mx-auto mb-28 -my-14 overflow-hidden" id="services">
+  <ul
+    class="gap-x-5 animate-scroll overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]"
+  >
+    {
+      services.map(service => (
+        <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
+          <span class="relative flex h-2 w-2 mb-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
+          </span>
+          {service}
+        </li>
+      ))
+    }
+    {
+      services.map(service => (
+        <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
+          <span class="relative flex h-2 w-2 mb-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
+          </span>
+          {service}
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script lang="javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const services = document.getElementById('services')
+
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in', 'fade-in', 'duration-1000')
+          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback)
+    observer.observe(services)
+  })
+</script>
