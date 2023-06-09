@@ -65,7 +65,7 @@ export function Header() {
       >
         <ul className="flex flex-col md:flex-row gap-4 w-full items-center mt-14 md:mt-0">
           <li className="font-medium hover:text-cielo/80 transition-colors duration-300 w-full">
-            <a href="#inicio" className="w-full inline-block text-center py-4">
+            <a href="/" className="w-full inline-block text-center py-4">
               Inicio
             </a>
           </li>
@@ -78,7 +78,7 @@ export function Header() {
             </a>
           </li>
           <li className="font-medium hover:text-cielo/80 transition-colors duration-300 w-full">
-            <a href="#equipos" className="w-full inline-block text-center py-4">
+            <a href="/equipos" className="w-full inline-block text-center py-4">
               Equipos
             </a>
           </li>
