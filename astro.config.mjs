@@ -6,6 +6,5 @@ import preact from '@astrojs/preact'
 export default defineConfig({
   integrations: [tailwind(), preact()],
   site: 'https://abouthernan.github.io',
-  // base: '/redyprinterx'
-  base: '/'
+  base: '/redyprinterx'
 })
