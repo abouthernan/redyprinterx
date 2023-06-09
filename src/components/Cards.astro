@@ -12,7 +12,9 @@ import { Message, Notify, Calendar } from './Icons'
   <div
     class="grid max-w-7xl mt-12 gap-y-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center mx-auto"
   >
-    <div class="border border-marino px-4 py-6 rounded-2xl w-[300px] h-52">
+    <div
+      class="border border-marino px-4 py-6 rounded-2xl w-[300px] h-52 card opacity-0 delay-100 transition-all"
+    >
       <Message />
       <h4 class="font-medium pt-4 text-xl">Responda algunas preguntas</h4>
       <p class="text-sm pt-4">
@@ -20,7 +22,9 @@ import { Message, Notify, Calendar } from './Icons'
       </p>
     </div>
 
-    <div class="border border-marino px-4 py-6 rounded-2xl w-[300px] h-52">
+    <div
+      class="border border-marino px-4 py-6 rounded-2xl w-[300px] h-52 card opacity-0 delay-200 transition-all"
+    >
       <Notify />
       <h4 class="font-medium pt-4 text-xl">Recibe una respuesta</h4>
       <p class="text-sm pt-4">
@@ -28,7 +32,9 @@ import { Message, Notify, Calendar } from './Icons'
       </p>
     </div>
 
-    <div class="border border-marino px-4 py-6 rounded-2xl w-[300px] h-52">
+    <div
+      class="border border-marino px-4 py-6 rounded-2xl w-[300px] h-52 card opacity-0 delay-300 transition-all"
+    >
       <Calendar />
       <h4 class="font-medium pt-4 text-xl">Agenda una cita</h4>
       <p class="text-sm pt-4">Programa tu primera sesión con nosotros</p>
@@ -39,16 +45,32 @@ import { Message, Notify, Calendar } from './Icons'
 <script lang="javascript">
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.getElementById('cards')
+    const cardsItem = document.querySelectorAll('.card')
 
     const callback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0')
           entry.target.classList.add(
             'animate-in',
-            'slide-in-from-bottom-8',
-            'duration-1000'
+            'slide-in-from-bottom-3',
+            'duration-[2s]',
+            'opacity-100'
           )
-          console.log('Agregando clase')
+          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+        }
+      })
+    }
+
+    const callback2 = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(
+            'animate-in',
+            'slide-in-from-bottom-10',
+            'duration-1000',
+            'opacity-100'
+          )
           observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
         }
       })
@@ -56,5 +78,10 @@ import { Message, Notify, Calendar } from './Icons'
 
     const observer = new IntersectionObserver(callback)
     observer.observe(cards)
+
+    const observer2 = new IntersectionObserver(callback2)
+    cardsItem.forEach(item => {
+      observer2.observe(item)
+    })
   })
 </script>
