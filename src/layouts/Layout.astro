@@ -23,13 +23,18 @@ const { title } = Astro.props
   </head>
   <body class="font-poppins h-screen">
     <slot />
-  </body><style is:global>
-    :has(#burger.open) body {
-      overflow: hidden !important;
-    }
+    <style is:global>
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      overflow-x: hidden;
-    }
-  </style>
+      :has(#burger.open) body {
+        overflow: hidden !important;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+  </body>
 </html>
