@@ -102,7 +102,7 @@ export function Header() {
       </a>
 
       <button
-        className={`md:hidden w-8 h-8 flex items-center justify-center border-none outline-none appearance-none ${
+        className={`md:hidden w-8 h-8 tex-black flex items-center justify-center border-none outline-none appearance-none ${
           menuIsOpen ? 'open' : ''
         }`}
         onClick={() => setMenuIsOpen(!menuIsOpen)}
