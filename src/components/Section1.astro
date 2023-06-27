@@ -7,40 +7,42 @@ import { Cog, Shield } from './Icons.jsx'
   id="features1"
 >
   <div class="md:w-1/2 text-center md:text-left">
-    <h2 class="text-[clamp(1.8rem,8vw,3rem)] font-medium">Lorem, ipsum</h2>
+    <h2 class="text-[clamp(1.8rem,8vw,3rem)] font-medium">Sobre nosotros</h2>
     <p class="mt-4 max-w-md">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati iusto
-      tenetur modi quia alias. Molestias quos dicta doloremque deleniti ut.
+     Somos una empresa dedicada a brindar soporte y servicio técnico a equipos
+odontológicos. Con <strong>16 años de experiencia</strong> en el mercado. Estamos Certificados
+por casa matriz <b>Carestream Dental</b> como Proveedores de Servicio.
     </p>
     <a
       class="mt-6 block uppercase font-medium hover:text-cielo transition-colors duration-300"
-      href="#">Lorem, ipsum dolor &rightarrow;</a
+      href="https://www.carestreamdental.com/es-americas/locations/?region=Central%20and%20South%20America&country=Colombia#Proveedores-de-servicios"
+      target="_blank"
     >
+      Somos distribuidores autorizados &rightarrow;
+    </a>
   </div>
 
   <div class="md:w-2/3 max-w-[65ch]">
     <div class="group flex gap-x-4">
-      <Cog width="62" height="62" />
+      <Cog />
       <div class="">
         <h3 class="text-[clamp(1rem,5vw,1.6rem)] font-medium">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Nuestro Departamento de Servicio Técnico
         </h3>
         <p class="mt-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-          eveniet sequi eligendi iusto exercitationem.
+          Busca bridarle con profesionalismo un servicio de calidad y una experiencia satisfactoria.
         </p>
       </div>
     </div>
 
     <div class="group mt-14 flex gap-x-4">
-      <Shield width="62" height="62" />
+      <Shield />
       <div class="">
         <h3 class="text-[clamp(1rem,5vw,1.6rem)] font-medium">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Nuestros Ingenieros
         </h3>
         <p class="mt-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-          eveniet sequi eligendi iusto exercitationem.
+          Están capacitados por casa matriz y cuentan con toda la documentación requerida por secretaria de Salud.
         </p>
       </div>
     </div>
@@ -48,23 +50,23 @@ import { Cog, Shield } from './Icons.jsx'
 </section>
 
 <script lang="javascript">
-  document.addEventListener('DOMContentLoaded', () => {
-    const features1 = document.getElementById('features1')
+document.addEventListener('DOMContentLoaded', () => {
+  const features1 = document.getElementById('features1')
 
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(
-            'animate-in',
-            'slide-in-from-bottom-6',
-            'duration-1000'
-          )
-          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-        }
-      })
-    }
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(
+          'animate-in',
+          'slide-in-from-bottom-6',
+          'duration-1000'
+        )
+        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+      }
+    })
+  }
 
-    const observer = new IntersectionObserver(callback)
-    observer.observe(features1)
-  })
+  const observer = new IntersectionObserver(callback)
+  observer.observe(features1)
+})
 </script>
