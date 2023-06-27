@@ -12,7 +12,7 @@ export function Header() {
       if (window.scrollY > lastScrollY) {
         setShowHeader('-translate-y-[72px]')
       } else {
-        setShowHeader('shadow-sm bg-white')
+        setShowHeader('shadow-sm')
       }
     } else {
       setShowHeader('translate-y-0')
@@ -41,7 +41,7 @@ export function Header() {
 
   return (
     <header
-      className={`w-full fixed z-20 top-0 transition-all duration-500 ${showHeader} animate-in fade-in duration-1000`}
+      className={`w-full fixed  bg-white z-20 top-0 transition-all duration-500 ${showHeader} animate-in fade-in duration-1000`}
     >
       <div class="max-w-7xl flex h-[72px] justify-between p-2 md:py-2 md:px-0 items-center mx-auto">
         <a href="/" className="h-14 w-14 transition-transform duration-300">
