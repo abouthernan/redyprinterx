@@ -1,6 +1,7 @@
 ---
 import Wrapper from './Wrapper.astro'
 import { Facebook, Instagram, Twitter } from './Icons'
+import logoFooter from '/logo-footer.webp'
 
 const facebookUser = 'user'
 const twitterUser = 'user'
@@ -126,6 +127,10 @@ const instagramUser = 'user'
         <Instagram />
       </a>
     </div>
+
+    <a href="/" title="home">
+      <img src={logoFooter} alt="logo" class="lg:w-full lg:h-full md:mt-10 lg:mt-0 mx-auto" />
+    </a>
     {/* RIGHT END */}
   </Wrapper>
   <Wrapper
