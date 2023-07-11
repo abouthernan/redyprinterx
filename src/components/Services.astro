@@ -1,12 +1,45 @@
 ---
 const services = [
-  'Mantenimiento e instalación de equipos',
-  'Acceso remoto',
-  'Calibración de equipos',
-  'Reparación de equipos',
-  'Venta y remplazo de equipos',
-  'Activación y configuración de software con licenciamiento',
-  'Montaje y desmontaje de equipos'
+  {
+    name: 'Capacitaciones',
+    description: 'Brindamos capacitaciones orientadas a un cambio de conocimientos, habilidades y aptitudes para nuestros clientes, permitiendo desarrollar sus actividades de manera eficiente.'
+  },
+  {
+    name: 'Asesorías',
+    description: 'Brindamos asesorías en donde se realizan recomendaciones, sugerencias y/o planes estratégicos sobre equipos, accesorios, insumos para su centro radiológico.'
+  },
+  {
+    name: 'Revisión técnica y diagnóstico de equipos',
+    description: 'si presentan inconvenientes, fallas y/o errores nuestros Ingenieros realizan revisiones y diagnósticos en sitio o de manera remota de los diferentes equipos odontológicos aumentando el flujo de trabajo.'
+  },
+  {
+    name: 'Soporte remoto',
+    description: 'Ofrecemos nuestro servicio de soporte remoto para dar soluciones a posibles problemas que presenta su equipo.'
+  },
+  {
+    name: 'Preinstalación de equipos',
+    description: 'Nuestros ingenieros están capacitados para realizar la correspondiente preinstalación de los equipos revisando espacios, temas eléctricos, hardware, entre otros. Brindando el acompañamiento necesario y asesoría durante todo el proceso.'
+  },
+  {
+    name: 'Instalación de equipos',
+    description: 'Posteriormente terminada la preinstalación continuamos con la Instalación del equipo siguiendo paso por paso según lo establecido por fabrica teniendo en cuenta el modelo del equipo en donde se realiza la configuración, pruebas y capacitación de manejo del equipo.'
+  },
+  {
+    name: 'Mantenimientos Correctivos',
+    description: 'Este servicio se realiza cuando el cliente se comunica a nuestras líneas de atención reportando el problema o falla que está presentando el equipo, el ingeniero de servicio y soporte da soluciones en sitio dejando el equipo en óptimo funcionamiento.'
+  },
+  {
+    name: 'Mantenimientos Preventivos',
+    description: 'Este servicio permite detectar fallas repetitivas, aumentar la vida útil del equipo, disminuir costos por reparaciones, prevenir problemas de calidad de imagen, no perder espacios operativos del equipo. Incluye desarme general del equipo, limpieza y desinfección, verificación de imagen, calibración, revisión de cableado para un óptimo funcionamiento.'
+  },
+  {
+    name: 'Instalación de Software',
+    description: 'Realizamos la instalación de la versión del Software que el cliente requiera.'
+  },
+  {
+    name: 'Reinstalación de Software',
+    description: 'Realizamos la correspondiente reinstalación de Software requerida por el cliente.'
+  }
 ]
 ---
 
@@ -14,48 +47,46 @@ const services = [
   class="container block mx-auto mb-28 -my-14 overflow-hidden pt-4"
   id="services"
 >
-  <ul
-    class="gap-x-5 animate-scroll overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]"
-  >
-    {
-      services.map(service => (
-        <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
-          <span class="relative flex h-2 w-2 mb-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
-          </span>
-          {service}
-        </li>
-      ))
-    }
-    {
-      services.map(service => (
-        <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
-          <span class="relative flex h-2 w-2 mb-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
-          </span>
-          {service}
-        </li>
-      ))
-    }
+  <ul class="gap-x-5 animate-scroll hover:paused direction-reverse  overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]">
+    {services.map(({name}) => (
+      <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
+        <span class="relative flex h-2 w-2 mb-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
+        </span>
+        <h3 class="font-bold text-md">{name}</h3>
+      </li>
+    ))}
+  </ul>
+
+  <ul class="gap-x-5 py-10 animate-scroll hover:paused  overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]">
+    {services.map(({name, description}) => (
+      <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
+        <span class="relative flex h-2 w-2 mb-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
+        </span>
+        <h3 class="font-bold text-md">{name}</h3>
+        <p class="text-sm pt-2">{description}</p>
+      </li>
+    ))}
   </ul>
 </div>
 
 <script lang="javascript">
-  document.addEventListener('DOMContentLoaded', () => {
-    const services = document.getElementById('services')
+document.addEventListener('DOMContentLoaded', () => {
+  const services = document.getElementById('services')
 
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in', 'fade-in', 'duration-1000')
-          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-        }
-      })
-    }
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in', 'fade-in', 'duration-1000')
+        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+      }
+    })
+  }
 
-    const observer = new IntersectionObserver(callback)
-    observer.observe(services)
-  })
+  const observer = new IntersectionObserver(callback)
+  observer.observe(services)
+})
 </script>
