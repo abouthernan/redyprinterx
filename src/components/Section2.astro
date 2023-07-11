@@ -3,7 +3,7 @@
   id="features2"
 >
   <h2 class="text-3xl text-white font-medium order-2 md:order-1">
-    The especialist is always with you
+    Somos los únicos distribuidores autorizados de Carestream en el país
   </h2>
 
   <img
@@ -17,23 +17,23 @@
 </section>
 
 <script lang="javascript">
-  document.addEventListener('DOMContentLoaded', () => {
-    const features2 = document.getElementById('features2')
+document.addEventListener('DOMContentLoaded', () => {
+  const features2 = document.getElementById('features2')
 
-    const callback = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(
-            'animate-in',
-            'slide-in-from-bottom-8',
-            'duration-1000'
-          )
-          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-        }
-      })
-    }
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(
+          'animate-in',
+          'slide-in-from-bottom-8',
+          'duration-1000'
+        )
+        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+      }
+    })
+  }
 
-    const observer = new IntersectionObserver(callback)
-    observer.observe(features2)
-  })
+  const observer = new IntersectionObserver(callback)
+  observer.observe(features2)
+})
 </script>
