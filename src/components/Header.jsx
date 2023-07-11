@@ -82,20 +82,20 @@ export function Header() {
 
             <li className="md:hidden font-medium hover:text-cielo/80 transition-colors duration-300 w-full flex justify-center mt-4">
               <a
-                href="tel:57123456789"
+                href="tel:573184165736"
                 className="font-medium px-3 py-2 w-full max-w-max inline-block text-center bg-cielo rounded-md text-white hover:bg-cielo/80 transition-colors duration-300"
               >
-                +57 123456789
+                (+57) 3184165736
               </a>
             </li>
           </ul>
         </nav>
 
         <a
-          href="tel:57123456789"
+          href="tel:573184165736"
           className="hidden md:block font-medium px-3 py-2 bg-cielo rounded-md text-white hover:bg-cielo/80 transition-colors duration-300"
         >
-          +57 123456789
+          (+57) 3184165736
         </a>
 
         <button
