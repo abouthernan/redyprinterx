@@ -47,19 +47,7 @@ const services = [
   class="container block mx-auto mb-28 -my-14 overflow-hidden pt-4"
   id="services"
 >
-  <ul class="gap-x-5 animate-scroll hover:paused direction-reverse  overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]">
-    {services.map(({name}) => (
-      <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
-        <span class="relative flex h-2 w-2 mb-3">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
-        </span>
-        <h3 class="font-bold text-md">{name}</h3>
-      </li>
-    ))}
-  </ul>
-
-  <ul class="gap-x-5 py-10 animate-scroll hover:paused  overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]">
+  <ul class="gap-x-5 animate-scroll hover:paused overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]">
     {services.map(({name, description}) => (
       <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
         <span class="relative flex h-2 w-2 mb-3">
