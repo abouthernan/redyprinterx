@@ -1,10 +1,25 @@
 ---
 const services = [
- 'Compromiso',
- 'Puntualidad',
- 'Responsabilidad',
- 'Honestidad',
- 'Trabajo en equipo',
+  {
+    name: 'Compromiso',
+    icon: '/hand.svg',
+  },
+  {
+    name: 'Trabajo en equipo',
+    icon: '/users.svg',
+  },
+  {
+    name: 'Pasión',
+    icon: '/like.svg',
+  },
+  {
+    name: 'Innovación',
+    icon: '/light.svg',
+  },
+  {
+    name: 'Respeto',
+    icon: '/flag.svg',
+  },
 ]
 ---
 
@@ -16,13 +31,16 @@ const services = [
     Nuestros valores
   </h3>
   <div
-    class="grid max-w-7xl mt-12 gap-5 grid-cols-[repeat(auto-fit,minmax(230px,1fr))] place-items-center mx-auto"
+    class="grid max-w-7xl mt-12 gap-5 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] place-items-center justify-center mx-auto"
   >
-    {services.map( item => (
-      <div
-        class="border text-center border-marino text-marino px-4 py-6 rounded-2xl w-[230px] card opacity-0 delay-100 transition-all"
-      >
-        <h4 class="font-medium text-xl">{item}</h4>
+    {services.map( ({name, icon}) => (
+      <div class="relative flex space-y-4 items-start flex-col border border-marino p-4 rounded-md text-marino min-w-[200px]">
+          <img
+            class="left-0 w-12 h-12 object-contain"
+            src={icon}
+            alt={name}
+          />
+          <h2 class="font-bold text-md">{name}</h2>
       </div>
     ))}
   </div>
