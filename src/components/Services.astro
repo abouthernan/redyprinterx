@@ -1,80 +1,134 @@
 ---
 const services = [
-  {
-    name: 'Capacitaciones',
-    description: 'Brindamos capacitaciones orientadas a un cambio de conocimientos, habilidades y aptitudes para nuestros clientes, permitiendo desarrollar sus actividades de manera eficiente.'
-  },
-  {
-    name: 'Asesorías',
-    description: 'Brindamos asesorías en donde se realizan recomendaciones, sugerencias y/o planes estratégicos sobre equipos, accesorios, insumos para su centro radiológico.'
-  },
-  {
-    name: 'Revisión técnica y diagnóstico de equipos',
-    description: 'si presentan inconvenientes, fallas y/o errores nuestros Ingenieros realizan revisiones y diagnósticos en sitio o de manera remota de los diferentes equipos odontológicos aumentando el flujo de trabajo.'
-  },
-  {
-    name: 'Soporte remoto',
-    description: 'Ofrecemos nuestro servicio de soporte remoto para dar soluciones a posibles problemas que presenta su equipo.'
-  },
-  {
-    name: 'Preinstalación de equipos',
-    description: 'Nuestros ingenieros están capacitados para realizar la correspondiente preinstalación de los equipos revisando espacios, temas eléctricos, hardware, entre otros. Brindando el acompañamiento necesario y asesoría durante todo el proceso.'
-  },
-  {
-    name: 'Instalación de equipos',
-    description: 'Posteriormente terminada la preinstalación continuamos con la Instalación del equipo siguiendo paso por paso según lo establecido por fabrica teniendo en cuenta el modelo del equipo en donde se realiza la configuración, pruebas y capacitación de manejo del equipo.'
-  },
-  {
-    name: 'Mantenimientos Correctivos',
-    description: 'Este servicio se realiza cuando el cliente se comunica a nuestras líneas de atención reportando el problema o falla que está presentando el equipo, el ingeniero de servicio y soporte da soluciones en sitio dejando el equipo en óptimo funcionamiento.'
-  },
-  {
-    name: 'Mantenimientos Preventivos',
-    description: 'Este servicio permite detectar fallas repetitivas, aumentar la vida útil del equipo, disminuir costos por reparaciones, prevenir problemas de calidad de imagen, no perder espacios operativos del equipo. Incluye desarme general del equipo, limpieza y desinfección, verificación de imagen, calibración, revisión de cableado para un óptimo funcionamiento.'
-  },
-  {
-    name: 'Instalación de Software',
-    description: 'Realizamos la instalación de la versión del Software que el cliente requiera.'
-  },
-  {
-    name: 'Reinstalación de Software',
-    description: 'Realizamos la correspondiente reinstalación de Software requerida por el cliente.'
-  }
-]
+    {
+      name: 'Capacitaciones',
+      description:
+        'Brindamos capacitaciones orientadas a un cambio de conocimientos, habilidades y aptitudes para nuestros clientes, permitiendo desarrollar sus actividades de manera eficiente.'
+    },
+    {
+      name: 'Asesorías',
+      description:
+        'Brindamos asesorías en donde se realizan recomendaciones, sugerencias y/o planes estratégicos sobre equipos, accesorios, insumos para su centro radiológico.'
+    },
+    {
+      name: 'Revisión técnica y diagnóstico de equipos',
+      description:
+        'si presentan inconvenientes, fallas y/o errores nuestros Ingenieros realizan revisiones y diagnósticos en sitio o de manera remota de los diferentes equipos odontológicos aumentando el flujo de trabajo.'
+    },
+    {
+      name: 'Soporte remoto',
+      description:
+        'Ofrecemos nuestro servicio de soporte remoto para dar soluciones a posibles problemas que presenta su equipo.'
+    },
+    {
+      name: 'Preinstalación de equipos',
+      description:
+        'Nuestros ingenieros están capacitados para realizar la correspondiente preinstalación de los equipos revisando espacios, temas eléctricos, hardware, entre otros. Brindando el acompañamiento necesario y asesoría durante todo el proceso.'
+    },
+    {
+      name: 'Instalación de equipos',
+      description:
+        'Posteriormente terminada la preinstalación continuamos con la Instalación del equipo siguiendo paso por paso según lo establecido por fabrica teniendo en cuenta el modelo del equipo en donde se realiza la configuración, pruebas y capacitación de manejo del equipo.'
+    },
+    {
+      name: 'Mantenimientos Correctivos',
+      description:
+        'Este servicio se realiza cuando el cliente se comunica a nuestras líneas de atención reportando el problema o falla que está presentando el equipo, el ingeniero de servicio y soporte da soluciones en sitio dejando el equipo en óptimo funcionamiento.'
+    },
+    {
+      name: 'Mantenimientos Preventivos',
+      description:
+        'Este servicio permite detectar fallas repetitivas, aumentar la vida útil del equipo, disminuir costos por reparaciones, prevenir problemas de calidad de imagen, no perder espacios operativos del equipo. Incluye desarme general del equipo, limpieza y desinfección, verificación de imagen, calibración, revisión de cableado para un óptimo funcionamiento.'
+    },
+    {
+      name: 'Instalación de Software',
+      description:
+        'Realizamos la instalación de la versión del Software que el cliente requiera.'
+    },
+    {
+      name: 'Reinstalación de Software',
+      description:
+        'Realizamos la correspondiente reinstalación de Software requerida por el cliente.'
+    }
+  ]
 ---
-
 <div
   class="container block mx-auto mb-28 -my-14 overflow-hidden pt-4"
   id="services"
 >
-  <ul class="gap-x-5 animate-scroll hover:paused overflow-hidden space-x-4 inline-flex w-[calc(320px*14)]">
-    {services.map(({name, description}) => (
-      <li class="relative border border-slate-200 w-80 p-4 rounded-md text-marino">
-        <span class="relative flex h-2 w-2 mb-3">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
-        </span>
-        <h3 class="font-bold text-md">{name}</h3>
-        <p class="text-sm pt-2">{description}</p>
-      </li>
-    ))}
-  </ul>
+  <div class="embla  relative">
+
+    <div class="embla__container flex space-x-10">
+      {services.map(({ name, description }) => (
+        <div class="embla__slide relative border border-slate-200 w-80 p-4 rounded-md text-marino flex-[0_0_350px]">
+          <span class="relative flex h-2 w-2 mb-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
+          </span>
+          <h3 class="font-bold text-md">{name}</h3>
+          <p class="text-sm pt-2">{description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class='buttons hidden md:flex justify-between absolute w-full h-full left-0 right-0 top-0'>
+      <button class="embla__prev h-full flex flex-col items-center justify-center bg-white/60 backdrop-blur-md">
+        <div class='h-8 w-8'>
+          <svg class="embla__button__svg" viewBox="0 0 532 532">
+            <path
+              class='fill-marino'
+              d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+            />
+          </svg>
+        </div>
+      </button>
+
+      <button class="embla__next h-full flex flex-col items-center justify-center bg-white/60 backdrop-blur-md">
+        <div class='h-8 w-8'>
+          <svg class="embla__button__svg" viewBox="0 0 532 532">
+            <path
+              class='fill-marino'
+              d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
 </div>
 
-<script lang="javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  const services = document.getElementById('services')
-
-  const callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in', 'fade-in', 'duration-1000')
-        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-      }
-    })
+<style>
+  .embla__slide:last-child {
+    margin-right: 40px!important;
   }
+</style>
 
-  const observer = new IntersectionObserver(callback)
-  observer.observe(services)
-})
+<script>
+  import EmblaCarousel from 'embla-carousel'
+  import Autoplay from 'embla-carousel-autoplay'
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const emblaNode = document.querySelector('.embla')
+    const prevButtonNode = emblaNode.querySelector('.embla__prev')
+    const nextButtonNode = emblaNode.querySelector('.embla__next')
+
+    const OPTIONS = {
+      loop: true
+    }
+
+    const plugins = [
+      Autoplay({
+        delay: 3000,
+        stopOnInteraction: false
+      })
+    ]
+
+    const emblaApi = EmblaCarousel(emblaNode, OPTIONS, plugins)
+
+    prevButtonNode.addEventListener('click', emblaApi.scrollPrev, false)
+    nextButtonNode.addEventListener('click', emblaApi.scrollNext, false)
+
+  })
 </script>
+
