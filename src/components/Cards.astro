@@ -2,47 +2,45 @@
 const services = [
   {
     name: 'Compromiso',
-    icon: '/hand.svg',
+    icon: '/hand.svg'
   },
   {
     name: 'Trabajo en equipo',
-    icon: '/users.svg',
+    icon: '/users.svg'
   },
   {
     name: 'Pasión',
-    icon: '/like.svg',
+    icon: '/like.svg'
   },
   {
     name: 'Innovación',
-    icon: '/light.svg',
+    icon: '/light.svg'
   },
   {
     name: 'Respeto',
-    icon: '/flag.svg',
-  },
+    icon: '/flag.svg'
+  }
 ]
 ---
 
 <section
-  class="bg-blanco py-10 container mx-auto rounded-3xl mt-10 px-2 md:px-12 text-center lg:text-left"
+  class="bg-marino py-10 container mx-auto rounded-3xl mt-10 px-2 md:px-12 text-center lg:text-left"
   id="cards"
 >
-  <h3 class="text-[clamp(1.8rem,8vw,3rem)] font-medium text-marino">
+  <h3 class="text-[clamp(1.8rem,8vw,3rem)] font-medium text-white">
     Nuestros valores
   </h3>
   <div
     class="grid max-w-7xl mt-12 gap-5 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] place-items-center justify-center mx-auto"
   >
-    {services.map( ({name, icon}) => (
-      <div class="relative flex space-y-4 items-start flex-col border border-marino p-4 rounded-md text-marino min-w-[200px]">
-          <img
-            class="left-0 w-12 h-12 object-contain"
-            src={icon}
-            alt={name}
-          />
+    {
+      services.map(({ name, icon }) => (
+        <div class="relative flex space-y-4 items-center flex-col border border-blanco p-4 rounded-md text-blanco min-w-[200px]">
+          <img class="left-0 w-12 h-12 object-contain" src={icon} alt={name} />
           <h2 class="font-bold text-md">{name}</h2>
-      </div>
-    ))}
+        </div>
+      ))
+    }
   </div>
 </section>
 
