@@ -112,7 +112,7 @@ export function Header() {
                 <div class="p-4">
                   <ul class="space-y-4" aria-labelledby="mega-menu-dropdown-button">
                     <li class="w-full">
-                      <a href="#" class="text-marino hover:text-cielo/80 transition-colors duration-300 w-full block">
+                      <a href="/equipos/extraorales" class="text-marino hover:text-cielo/80 transition-colors duration-300 w-full block">
                         Equipos Extraorales
                       </a>
                     </li>
