@@ -1,0 +1,37 @@
+---
+interface Props {
+  name: string
+  images: string[]
+}
+
+const { name, images } = Astro.props
+---
+
+{
+  images.length === 1 ? (
+    <img
+      class="w-ful py-5 lg:py-0 md:w-96 md:h-96 object-contain mix-blend-multiply mx-auto rounded-lg shadow-sm select-none"
+      src={images[0]}
+      alt={`puede ser una imagen del equipo medico ${name}`}
+    />
+  ) : (
+    <div class="swiper swiperProducts w-full max-w-md max-h-96 overflow-hidden">
+      <div class="swiper-wrapper">
+        {images.map(img => (
+          <div class="swiper-slide">
+            <img
+              class="w-ful h-full py-5 lg:py-0 md:w-96 md:h-96 object-contain mix-blend-multiply mx-auto rounded-lg shadow-sm select-none"
+              src={img}
+              alt={`puede ser una imagen del equipo medico ${name}`}
+            />
+          </div>
+        ))}
+      </div>
+      <div id="swiperProducts" class="swiper-pagination md:hidden" />
+      <div class="swiper-button-prev text-marino hidden md:block" />
+      <div class="swiper-button-next text-marino hidden md:block" />
+    </div>
+  )
+}
+
+<script src="/swiper.js" is:inline type="module"></script>
