@@ -6,45 +6,53 @@ import { Cog, Shield } from './Icons.jsx'
   class="bg-white rounded-t-3xl -mt-5 container mx-auto pt-10 lg:pt-20 pb-20 lg:pb-28 flex flex-col md:flex-row justify-between items-start px-2 md:px-12 gap-y-14 md:gap-y-0 gap-x-8"
   id="nosotros"
 >
-  <div class="md:w-1/2 text-center md:text-left">
-    <h2 class="text-[clamp(1.8rem,8vw,3rem)] font-medium">Sobre nosotros</h2>
-    <p class="mt-4 max-w-md">
-      Con más de <strong>16 años de experiencia</strong> en el mercado, certificados
-      por casa matriz <strong>Carestream Dental</strong> como proveedores de soporte
-      y servicio de equipos dentales.
-    </p>
-    <a
-      class="mt-6 block text-cielo uppercase font-medium hover:text-cielo/60 transition-colors duration-300 pb-[1px] border-b border-cielo/60 max-w-max"
-      href="https://www.carestreamdental.com/es-americas/locations/?region=Central%20and%20South%20America&country=Colombia#Proveedores-de-servicios"
-      target="_blank"
-    >
-      Somos distribuidores autorizados &rightarrow;
-    </a>
-  </div>
-
-  <div class="md:w-2/3 max-w-[65ch]">
-    <div class="group flex gap-x-4">
-      <Cog />
-      <div class="lg:w-[551px]">
-        <h3 class="text-[clamp(1rem,5vw,1.6rem)] font-medium">
-          Nuestro Departamento de Servicio Técnico
-        </h3>
-        <p class="mt-2">Buscamos brindarle un servicio de calidad.</p>
-      </div>
-    </div>
-
-    <div class="group mt-14 flex gap-x-4">
-      <Shield />
-      <div class="lg:w-[551px]">
-        <h3 class="text-[clamp(1rem,5vw,1.6rem)] font-medium">
-          Nuestros Ingenieros
-        </h3>
-        <p class="mt-2">
-          Están capacitados por casa matriz y cuentan con toda la documentación
-          solicitada por la secretaria de salud para un servicio de calidad.
+  <div class="grid place-items-center w-full lg:place-items-start lg:grid-cols-2 lg:grid-flow-col-dense gap-x-2">
+    <!-- card -->
+    <div class="card lg:shadow-lg lg:shadow-turquesa/30 rounded-md border-2 border-turquesa pb-5">
+      <header class="uppercase bg-turquesa py-2 px-4 text-white">
+        <h2 class="font-bold text-xl md:text-2xl">Sobre Nosotros</h2>
+      </header>
+      <div class="mt-5 px-4">
+        <h3 class="font-medium text-marino text-lg md:text-xl">Redyprinterx.</h3>
+        <p class="mt-4 max-w-md">
+          Con más de <strong>16 años de experiencia</strong> en el mercado, certificados por casa matriz <strong>Carestream Dental</strong> como proveedores de soporte y servicio de equipos dentales.
         </p>
       </div>
     </div>
+
+    <!-- card -->
+    <div class="card lg:shadow-lg lg:shadow-cielo/30 rounded-md border-2 border-cielo pb-5">
+      <header class="uppercase bg-cielo py-2 px-4 text-white">
+        <h2 class="font-bold text-xl md:text-2xl max-w-md">¿Porque nuestro servicio tecnico?</h2>
+      </header>
+      <div class="mt-5 px-4">
+        <h3 class="font-medium text-cielo text-lg md:text-xl"></h3>
+        <p class="mt-4 max-w-md">
+          Tranquilidad, calidad y confianza. Un servicio perfecto para sus productos. Ponemos a su disposición nuestra red de servicios técnicos especializados y autorizados, con todo el respaldo directo de fábrica.
+        </p>
+
+        <ul class="list-disc ml-6 mt-4">
+          <li>Profesionales altamente cualificados</li>
+          <li>Utilización de piezas originales</li>
+          <li>Utilización de herramientas calibradas y especiales</li>
+          <li>Respaldo directo de fábrica</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- card -->
+    <div class="card lg:shadow-lg lg:shadow-marino/30 rounded-md border-2 border-marino pb-5">
+      <header class="uppercase bg-marino py-2 px-4 text-white">
+        <h2 class="font-bold text-xl md:text-2xl max-w-md">De profesional a profesional</h2>
+      </header>
+      <div class="mt-5 px-4">
+        <h3 class="font-medium text-marino text-lg md:text-xl"></h3>
+        <p class="mt-4 max-w-md">
+          Sabemos perfectamente cómo volver a poner a punto sus valiosos instrumentos y equipos. Como representantes exclusivos en Colombia del fabricante, disponemos del mejor <strong>"know-how"</strong>, y al ser los únicos distribuidores directos, le brindamos el mejor presupuesto posible en reparación."
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
