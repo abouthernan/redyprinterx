@@ -146,7 +146,7 @@ export function Header() {
                     </li>
                     <li class="w-full">
                       <a
-                        href="#"
+                        href="/equipos/intraorales"
                         class="text-marino hover:text-cielo/80 transition-colors duration-300 w-full block"
                       >
                         Equipos Intraorales
@@ -154,7 +154,7 @@ export function Header() {
                     </li>
                     <li class="w-full">
                       <a
-                        href="#"
+                        href="/equipos/softwares"
                         class="text-marino hover:text-cielo/80 transition-colors duration-300 w-full block"
                       >
                         Software's
