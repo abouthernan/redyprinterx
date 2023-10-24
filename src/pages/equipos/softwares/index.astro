@@ -1,0 +1,47 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import { Header } from '../../../components/Header'
+import Footer from '../../../components/Footer.astro'
+import products from '../../../mocks/equipos.json'
+
+const currentProducts = products.filter(
+  ({ category }) => category === 'software'
+)
+---
+
+<Layout title="Equipos - Red y Printerx">
+  <Header client:load />
+  <main
+    class="pb-20 min-h-[calc(80vh-72px)] mt-[72px] container mx-auto animate-in fade-in duration-1000"
+  >
+    <h1 class="text-3xl text-center lg:text-left p-8 font-medium">
+      Software's
+    </h1>
+    <div class="grid px-5 grid-content place-items-center">
+      {
+        currentProducts.map(({ images, name, slug }) => (
+          <a
+            href={`/equipos/extraorales/${slug}`}
+            title={`Ver detalles de ${name}`}
+            class="bg-white flex flex-col rounded-xl w-64 shadow px-3 py-4"
+          >
+            <img
+              class="w-full h-full aspect-square object-contain"
+              src={images[0]}
+              alt={`puede ser una imagen de un equipo ${name}`}
+            />
+            <h2 class="text-center text-base">{name}</h2>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .grid-content {
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-gap: 1rem;
+  }
+</style>
