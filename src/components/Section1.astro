@@ -3,77 +3,130 @@ import { Cog, Shield } from './Icons.jsx'
 ---
 
 <section
-  class="bg-white rounded-t-3xl -mt-5 container mx-auto pt-10 lg:pt-20 pb-20 lg:pb-28 flex flex-col md:flex-row justify-between items-start px-2 md:px-12 gap-y-14 md:gap-y-0 gap-x-8"
+  class="grid md:grid-cols-2 place-items-center text-marino gap-10 mx-auto max-w-7xl"
   id="nosotros"
 >
-  <div class="grid place-items-center w-full lg:place-items-start lg:grid-cols-2 lg:grid-flow-col-dense gap-x-2">
-    <!-- card -->
-    <div class="card lg:shadow-lg lg:shadow-turquesa/30 rounded-md border-2 border-turquesa pb-5">
-      <header class="uppercase bg-turquesa py-2 px-4 text-white">
-        <h2 class="font-bold text-xl md:text-2xl">Sobre Nosotros</h2>
-      </header>
-      <div class="mt-5 px-4">
-        <h3 class="font-medium text-marino text-lg md:text-xl">Redyprinterx.</h3>
-        <p class="mt-4 max-w-md">
-          Con más de <strong>16 años de experiencia</strong> en el mercado, certificados por casa matriz <strong>Carestream Dental</strong> como proveedores de soporte y servicio de equipos dentales.
-        </p>
-      </div>
-    </div>
+  <header class="text-center md:text-left order-2">
+    <h2 class="font-bold text-2xl lg:text-6xl uppercase">Sobre Nosotros</h2>
+    <p class="max-w-3xl mt-2 lg:mt-6 lg:text-xl leading-relaxed">
+      Con más de <strong>16 años de experiencia</strong> en el mercado,
+      certificados por casa matriz <strong>Carestream Dental</strong> como
+      proveedores de soporte y servicio de equipos dentales.
+    </p>
+  </header>
 
-    <!-- card -->
-    <div class="card lg:shadow-lg lg:shadow-cielo/30 rounded-md border-2 border-cielo pb-5">
-      <header class="uppercase bg-cielo py-2 px-4 text-white">
-        <h2 class="font-bold text-xl md:text-2xl max-w-md">¿Porque nuestro servicio tecnico?</h2>
-      </header>
-      <div class="mt-5 px-4">
-        <h3 class="font-medium text-cielo text-lg md:text-xl"></h3>
-        <p class="mt-4 max-w-md">
-          Tranquilidad, calidad y confianza. Un servicio perfecto para sus productos. Ponemos a su disposición nuestra red de servicios técnicos especializados y autorizados, con todo el respaldo directo de fábrica.
-        </p>
-
-        <ul class="list-disc ml-6 mt-4">
-          <li>Profesionales altamente cualificados</li>
-          <li>Utilización de piezas originales</li>
-          <li>Utilización de herramientas calibradas y especiales</li>
-          <li>Respaldo directo de fábrica</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- card -->
-    <div class="card lg:shadow-lg lg:shadow-marino/30 rounded-md border-2 border-marino pb-5">
-      <header class="uppercase bg-marino py-2 px-4 text-white">
-        <h2 class="font-bold text-xl md:text-2xl max-w-md">De profesional a profesional</h2>
-      </header>
-      <div class="mt-5 px-4">
-        <h3 class="font-medium text-marino text-lg md:text-xl"></h3>
-        <p class="mt-4 max-w-md">
-          Sabemos perfectamente cómo volver a poner a punto sus valiosos instrumentos y equipos. Como representantes exclusivos en Colombia del fabricante, disponemos del mejor <strong>"know-how"</strong>, y al ser los únicos distribuidores directos, le brindamos el mejor presupuesto posible en reparación."
-        </p>
-      </div>
-    </div>
-
-  </div>
+  <picture class="order-1 mb-3 md:mb-0 rounded-3xl bg-blanco max-w-md">
+    <img
+      src="/about/men1.png"
+      alt="pic"
+      class="w-full h-full aspect-square object-cover object-top rounded-3xl"
+    />
+  </picture>
 </section>
 
-<script lang="javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  const features1 = document.getElementById('nosotros')
+<section
+  class="grid md:grid-cols-2 place-items-center text-marino gap-10 mx-auto max-w-7xl my-20"
+  id="nosotros2"
+>
+  <header class="order-2 md:order-1">
+    <h2 class="font-bold text-2xl lg:text-3xl uppercase">
+      ¿Porque nuestro servicio tecnico?
+    </h2>
 
-  const callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(
-          'animate-in',
-          'slide-in-from-bottom-6',
-          'duration-1000'
-        )
-        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-      }
-    })
+    <div class="max-w-3xl mt-2 lg:mt-6 lg:text-xl leading-relaxed">
+      <p>
+        Tranquilidad, calidad y confianza. Un servicio perfecto para sus
+        productos. Ponemos a su disposición nuestra red de servicios técnicos
+        especializados y autorizados.
+      </p>
+
+      <ul class="mt-3 ml-5 space-y-3">
+        <li class="list-item">Profesionales altamente cualificados.</li>
+        <li class="list-item">Utilización de piezas originales.</li>
+        <li class="list-item">
+          Utilización de herramientas calibradas y especiales.
+        </li>
+        <li class="list-item">Distribuidores autorizados por fábrica.</li>
+        <li class="list-item">Ingenieros a nivel nacional.</li>
+        <li class="list-item">
+          Cumplimos con estándares de calidad de servicio de clase mundial.
+        </li>
+        <li class="list-item">
+          Tiempo de respuesta eficiente a cualquiera de sus inquietudes.
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <picture
+    class="order-1 md:order-2 mb-3 md:mb-0 rounded-3xl bg-turquesa max-w-md"
+  >
+    <img
+      src="/about/women.png"
+      alt="pic"
+      class="w-full h-full aspect-square object-cover object-top rounded-3xl"
+    />
+  </picture>
+</section>
+
+<section
+  class="grid md:grid-cols-2 place-items-center text-marino gap-10 mb-10 mx-auto max-w-7xl"
+  id="nosotros3"
+>
+  <header class="text-center md:text-left order-2">
+    <h2 class="font-bold text-2xl lg:text-3xl uppercase">
+      De profesional a profesional
+    </h2>
+    <p class="max-w-3xl mt-2 lg:mt-6 lg:text-xl leading-relaxed">
+      Sabemos perfectamente cómo volver a poner a punto sus valiosos
+      instrumentos y equipos. Como representantes exclusivos en Colombia del
+      fabricante, disponemos del mejor <strong>"know-how"</strong>, y al ser los
+      únicos distribuidores directos, le brindamos el mejor presupuesto posible
+      en reparación.
+    </p>
+  </header>
+
+  <picture class="order-1 mb-3 md:mb-0 rounded-3xl bg-cielo max-w-md">
+    <img
+      src="/about/men2.png"
+      alt="pic"
+      class="w-full h-full aspect-square object-cover object-top rounded-3xl"
+    />
+  </picture>
+</section>
+
+<style>
+  .list-item {
+    list-style: none;
+    background-image: url("data:image/svg+xml,%3Csvg fill='%231DCDFE' xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 448 512'%3E%3Cpath d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-size: 18px;
   }
+</style>
 
-  const observer = new IntersectionObserver(callback)
-  observer.observe(features1)
-})
+<script lang="javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const features1 = document.getElementById('nosotros')
+    const features2 = document.getElementById('nosotros2')
+    const features3 = document.getElementById('nosotros3')
+
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(
+            'animate-in',
+            'slide-in-from-bottom-6',
+            'duration-1000'
+          )
+          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback)
+    observer.observe(features1)
+    observer.observe(features2)
+    observer.observe(features3)
+  })
 </script>

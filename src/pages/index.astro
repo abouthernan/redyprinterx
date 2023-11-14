@@ -12,11 +12,13 @@ import Cards from '../components/Cards.astro'
 
 <Layout title="Red y Printerx">
   <Header client:load />
-  <Hero />
-  <Brands />
-  <Section1 />
-  <Services />
-  <Section2 />
-  <Cards />
+  <div class="px-2 lg:px-0">
+    <Hero />
+    <Brands />
+    <Section1 />
+    <Services />
+    <Section2 />
+    <Cards />
+  </div>
   <Footer />
 </Layout>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'preact/hooks'
 import { Menu, Close } from './Icons'
-import logoImg from '/logo-large.png'
 
 export function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
@@ -70,24 +69,29 @@ export function Header() {
 
   return (
     <header
-      className={`w-full fixed  bg-white z-20 top-0 transition-all duration-500 ${showHeader} animate-in fade-in duration-1000`}
+      className={`w-full fixed bg-white z-20 top-0 transition-all duration-500 ${showHeader} animate-in fade-in duration-1000`}
     >
-      <div class="max-w-7xl flex h-[72px] justify-between p-2 md:py-2 md:px-0 items-center mx-auto">
+      <div class="max-w-7xl flex h-[72px] justify-between p-2 md:py-2 lg:px-0 items-center mx-auto">
         <a
           href="/"
           className="h-28 lg:h-36 transition-transform duration-300 flex-grow-0"
         >
           <img
             className="aspect-video object-contain w-full h-full"
-            src={logoImg}
+            src="/logo-large.png"
             alt="Logo"
           />
         </a>
 
         <nav
-          className={`flex bg-blanco rounded-t-3xl md:bg-transparent fixed md:static top-[72px] left-0 right-0 h-screen md:h-auto transition-all translate-x-full md:translate-x-0 duration-500 opacity-0 md:opacity-100 ${
-            menuIsOpen ? 'translate-x-0 opacity-100' : ''
-          }`}
+          className={`
+            flex bg-blanco rounded-t-3xl fixed  top-[72px] left-0 right-0 h-screen transition-all 
+            md:translate-x-0 duration-500  md:opacity-100 md:bg-transparent md:static md:h-auto
+            ${
+              menuIsOpen
+                ? 'translate-x-0 opacity-100'
+                : 'translate-x-full opacity-0'
+            }`}
         >
           <ul className="flex flex-col md:flex-row gap-4 w-full items-center mt-14 md:mt-0">
             <li className="font-medium hover:text-cielo/80 transition-colors duration-300 w-full">

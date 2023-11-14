@@ -1,7 +1,6 @@
 ---
 import Wrapper from './Wrapper.astro'
 import { Facebook, Instagram, Twitter } from './Icons'
-import logoFooter from '/logo-footer.webp'
 
 const facebookUser = 'user'
 const twitterUser = 'user'
@@ -46,7 +45,7 @@ const instagramUser = 'user'
           >
             servicio.cliente@redyprinterx.com
           </a>
-                    <a
+          <a
             href="mailto:redyprinterxsas@gmail.com"
             class="text-sm text-blanco hover:text-white cursor-pointer transition-colors duration-300"
           >
@@ -64,9 +63,7 @@ const instagramUser = 'user'
           >
             (+57) 3124504680
           </a>
-          <p
-            class="text-sm text-blanco transition-colors duration-300"
-          >
+          <p class="text-sm text-blanco transition-colors duration-300">
             601 7364 809
           </p>
           <p class="text-sm text-blanco transition-colors duration-300">
@@ -86,11 +83,16 @@ const instagramUser = 'user'
 
           <p
             class="text-sm text-blanco transition-colors duration-300 max-w-[200px]"
-          ><span class="font-medium block">Lunes a viernes:</span> 8:00am – 5:00pm</p>
+          >
+            <span class="font-medium block">Lunes a viernes:</span> 8:00am –
+            5:00pm
+          </p>
 
           <p
             class="text-sm text-blanco transition-colors duration-300 max-w-[200px]"
-          ><span class="font-medium block">Sabados:</span> 8:00am - 12:00pm</p>
+          >
+            <span class="font-medium block">Sabados:</span> 8:00am - 12:00pm
+          </p>
         </div>
         {/* MENU END */}
       </div>
@@ -129,7 +131,11 @@ const instagramUser = 'user'
     </div>
 
     <a href="/" title="home">
-      <img src={logoFooter} alt="logo" class="lg:w-full lg:h-full md:mt-10 lg:mt-0 mx-auto" />
+      <img
+        src="/logo-footer.webp"
+        alt="logo"
+        class="lg:w-full lg:h-full md:mt-10 lg:mt-0 mx-auto"
+      />
     </a>
     {/* RIGHT END */}
   </Wrapper>
@@ -138,7 +144,8 @@ const instagramUser = 'user'
   >
     {/* LEFT START */}
     <p class="text-[12px] text-blanco text-center md:text-center">
-      © {new Date().getFullYear()} Red y Printerx. Todos los derechos reservados.
+      © {new Date().getFullYear()} Red y Printerx. Todos los derechos
+      reservados.
     </p>
     {/* LEFT END */}
   </Wrapper>
