@@ -8,3 +8,4 @@ export default defineConfig({
   site: 'https://rypx.vehement.co',
   base: '/'
 })
+

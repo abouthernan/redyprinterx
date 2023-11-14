@@ -10,12 +10,12 @@ export async function getStaticPaths() {
   return pages.map(({ slug, name, description, images, category }) => {
     return {
       params: { slug },
-      props: { name, description, images, category }
+      props: { name, description, images, category, slug }
     }
   })
 }
 
-const { name, description, images, category } = Astro.props
+const { name, description, images, category, slug } = Astro.props
 ---
 
 <Layout title={`Equipo ${name} - Red y Printerx`}>
@@ -23,7 +23,12 @@ const { name, description, images, category } = Astro.props
   <main
     class="pb-20 min-h-[calc(80vh-72px)] px-2 bg-blanco grid place-content-center rounded-3xl mt-[72px] container w-[90%] mx-auto animate-in fade-in duration-1000"
   >
-    <h1 class="text-3xl text-center p-8 font-medium">{name}</h1>
+    <h1
+      class="text-3xl text-center p-8 font-medium"
+      transition:name={`product title ${slug}`}
+    >
+      {name}
+    </h1>
     <SwiperProductImage images={images} name={name} />
     <small class="text-center pt-8"
       ><span class="font-medium text-sm">Categoría: {' '}</span>{

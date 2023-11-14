@@ -1,18 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    fontFamily: {
-      poppins: ['Poppins', 'sans-serif']
-    },
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif']
+      },
       animation: {
-        scroll: 'scroll 30s linear infinite'
+        'loop-scroll': 'loop-scroll 50s linear infinite',
+        'loop-scroll-mobile': 'loop-scroll 10s linear infinite'
       },
       keyframes: {
-        scroll: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(calc(-320px*7))' }
+        'loop-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' }
         }
       },
       colors: {

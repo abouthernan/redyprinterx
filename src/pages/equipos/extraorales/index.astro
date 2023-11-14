@@ -30,7 +30,12 @@ const currentProducts = products.filter(
               src={images[0]}
               alt={`puede ser una imagen de un equipo ${name}`}
             />
-            <h2 class="text-center text-base">{name}</h2>
+            <h2
+              class="text-center text-base"
+              transition:name={`product title ${slug}`}
+            >
+              {name}
+            </h2>
           </a>
         ))
       }
