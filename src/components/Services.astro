@@ -49,7 +49,7 @@ const services = [
 ---
 
 <div
-  class="container bg-white max-w-7xl rounded-t-3xl block mx-auto mb-28 overflow-hidden pt-4 mt-20"
+  class="container bg-white rounded-t-3xl block mx-auto mb-28 overflow-hidden pt-4 mt-20"
   id="services"
 >
   <div class="embla relative">
@@ -122,7 +122,8 @@ const services = [
     const plugins = [
       Autoplay({
         delay: 3000,
-        stopOnInteraction: false
+        stopOnInteraction: false,
+        stopOnMouseEnter: true
       })
     ]
 

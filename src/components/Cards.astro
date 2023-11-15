@@ -24,14 +24,14 @@ const services = [
 ---
 
 <section
-  class="bg-marino py-10 container mx-auto rounded-3xl mt-10 px-2 md:px-12 text-center lg:text-left"
+  class="bg-marino py-10 container mx-auto rounded-3xl mt-10 px-2 md:px-12 text-center lg:text-left md:min-h-[500px] md:grid md:place-content-center"
   id="cards"
 >
   <h3 class="text-[clamp(1.8rem,8vw,3rem)] font-medium text-white">
     Nuestros valores
   </h3>
   <div
-    class="grid max-w-7xl mt-12 gap-5 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] place-items-center justify-center mx-auto"
+    class="grid lg:max-w-7xl mt-12 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center justify-center mx-auto w-full max-w-full"
   >
     {
       services.map(({ name, icon }) => (
@@ -45,45 +45,45 @@ const services = [
 </section>
 
 <script lang="javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.getElementById('cards')
-  const cardsItem = document.querySelectorAll('.card')
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.getElementById('cards')
+    const cardsItem = document.querySelectorAll('.card')
 
-  const callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0')
-        entry.target.classList.add(
-          'animate-in',
-          'slide-in-from-bottom-3',
-          'duration-1000',
-          'opacity-100'
-        )
-        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-      }
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0')
+          entry.target.classList.add(
+            'animate-in',
+            'slide-in-from-bottom-3',
+            'duration-1000',
+            'opacity-100'
+          )
+          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+        }
+      })
+    }
+
+    const callback2 = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(
+            'animate-in',
+            'slide-in-from-bottom-10',
+            'duration-1000',
+            'opacity-100'
+          )
+          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback)
+    observer.observe(cards)
+
+    const observer2 = new IntersectionObserver(callback2)
+    cardsItem.forEach(item => {
+      observer2.observe(item)
     })
-  }
-
-  const callback2 = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(
-          'animate-in',
-          'slide-in-from-bottom-10',
-          'duration-1000',
-          'opacity-100'
-        )
-        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-      }
-    })
-  }
-
-  const observer = new IntersectionObserver(callback)
-  observer.observe(cards)
-
-  const observer2 = new IntersectionObserver(callback2)
-  cardsItem.forEach(item => {
-    observer2.observe(item)
   })
-})
 </script>

@@ -1,8 +1,9 @@
 export function Menu() {
   return (
     <svg
-      stroke="currentColor"
-      fill="#1d1d1d"
+      fill="currentColor"
+      width="100%"
+      height="100%"
       stroke-width="0"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,8 +16,9 @@ export function Menu() {
 export function Close() {
   return (
     <svg
-      stroke="currentColor"
-      fill="#1d1d1d"
+      fill="currentColor"
+      width="100%"
+      height="100%"
       stroke-width="0"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +57,9 @@ export function Shield() {
 export function Facebook() {
   return (
     <svg
+      fill="currentColor"
+      width="24"
+      height="24"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       style="fill: #2F455C;transform: ;msFilter:;"

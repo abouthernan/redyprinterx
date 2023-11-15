@@ -1,8 +1,8 @@
 <section
-  class="bg-blanco py-10 container mx-auto rounded-3xl -mt-5 px-2 md:px-12 text-center md:text-left flex flex-col md:flex-row items-center justify-center lg:gap-x-60"
+  class="bg-blanco py-10 container mx-auto rounded-3xl -mt-5 px-2 md:px-12 text-center md:text-left flex flex-col md:flex-row items-center justify-center lg:gap-x-60 min-h-[500px]"
   id="features2"
 >
-  <h2 class="text-3xl text-marino font-medium order-2 md:order-1">
+  <h2 class="text-3xl text-marino font-medium order-2 md:order-1 max-w-3xl">
     Somos distribuidores de servicio y soporte autorizados de carestream dental
     en el país, trabajando continuamente para tener un servicio de talla
     mundial.
@@ -18,23 +18,23 @@
 </section>
 
 <script lang="javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  const features2 = document.getElementById('features2')
+  document.addEventListener('DOMContentLoaded', () => {
+    const features2 = document.getElementById('features2')
 
-  const callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add(
-          'animate-in',
-          'slide-in-from-bottom-8',
-          'duration-1000'
-        )
-        observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
-      }
-    })
-  }
+    const callback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(
+            'animate-in',
+            'slide-in-from-bottom-8',
+            'duration-1000'
+          )
+          observer.unobserve(entry.target) // Dejar de observar el elemento una vez agregada la clase
+        }
+      })
+    }
 
-  const observer = new IntersectionObserver(callback)
-  observer.observe(features2)
-})
+    const observer = new IntersectionObserver(callback)
+    observer.observe(features2)
+  })
 </script>

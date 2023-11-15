@@ -71,10 +71,10 @@ export function Header() {
     <header
       className={`w-full fixed bg-white z-20 top-0 transition-all duration-500 ${showHeader} animate-in fade-in duration-1000`}
     >
-      <div class="max-w-7xl flex h-[72px] justify-between p-2 md:py-2 lg:px-0 items-center mx-auto">
+      <div class="container w-full flex h-[72px] justify-between p-2 md:py-2 lg:px-0 items-center mx-auto">
         <a
           href="/"
-          className="h-28 lg:h-36 transition-transform duration-300 flex-grow-0"
+          className="h-20 sm:h-28 lg:h-36 w-56 md:w-[unset] transition-transform duration-300"
         >
           <img
             className="aspect-video object-contain w-full h-full"
@@ -85,7 +85,7 @@ export function Header() {
 
         <nav
           className={`
-            flex bg-blanco rounded-t-3xl fixed  top-[72px] left-0 right-0 h-screen transition-all 
+            flex bg-blanco rounded-t-3xl fixed top-[72px] left-0 right-0 h-screen transition-all 
             md:translate-x-0 duration-500  md:opacity-100 md:bg-transparent md:static md:h-auto
             ${
               menuIsOpen
@@ -188,7 +188,7 @@ export function Header() {
         </a>
 
         <button
-          className={`md:hidden w-8 h-8 tex-black flex items-center justify-center border-none outline-none appearance-none ${
+          className={`md:hidden flex-shrink-0 w-8 h-8 tex-black flex items-center justify-center border-none outline-none appearance-none ${
             menuIsOpen ? 'open' : ''
           }`}
           onClick={() => setMenuIsOpen(!menuIsOpen)}
