@@ -1,47 +1,68 @@
 ---
+import {
+  Capacitacion,
+  LighBulb,
+  Wrench,
+  Laptop,
+  Cogs,
+  Desktop,
+  Tools,
+  ShieldService,
+  Code
+} from './Icons'
+
 const services = [
   {
     name: 'Capacitaciones',
+    Icon: Capacitacion,
     description:
       'Contamos con un equipo técnico el cual brindara un cambio de conocimientos, habilidades y aptitudes para nuestros clientes, permitiendo desarrollar sus actividades de manera eficiente.'
   },
   {
     name: 'Asesorías',
+    Icon: LighBulb,
     description:
       'Acompañamiento al cliente realizando recomendaciones, sugerencias y/o planes estratégicos sobre equipos, accesorios, insumos para su centro radiológico.'
   },
   {
     name: 'Revisión técnica y diagnóstico de equipos',
+    Icon: Wrench,
     description:
       'Nuestros ingenieros realizan revisiones y diagnósticos en sitio o de manera remota detectando inconvenientes, fallas y/o errores en los diferentes equipos odontológicos aumentando el flujo de trabajo.'
   },
   {
     name: 'Soporte remoto',
+    Icon: Laptop,
     description:
       'Te brindamos solución de problemas en tiempo real con tus equipos.'
   },
   {
     name: 'Preinstalación de equipos',
+    Icon: Cogs,
     description:
       'Estamos capacitados para el acompañamiento necesario y asesoría durante el proceso de preinstalación de equipos respecto a espacios, temas eléctricos, hardware, entre otros.'
   },
   {
     name: 'Instalación de equipos',
+    Icon: Desktop,
     description:
       'La instalación se realiza de acuerdo a lo establecido por fabrica teniendo en cuenta el modelo del equipo; se hace la configuración, pruebas y capacitación del manejo del equipo.'
   },
   {
     name: 'Mantenimientos Correctivos',
+    Icon: Tools,
     description:
       'Solución en sitio o remoto al problema o falla que está presentando el equipo dejándolo en óptimo funcionamiento.'
   },
   {
     name: 'Mantenimientos Preventivos',
+    Icon: ShieldService,
     description:
       'Por recomendación de fábrica se realiza la programación preventiva periódica de acuerdo al modelo del equipo permitiendo detectar fallas repetitivas, aumentar la vida útil del equipo, disminuir costos por reparaciones, prevenir problemas de calidad de imagen y revisar correcto funcionamiento.'
   },
   {
     name: 'Instalación de Software',
+    Icon: Code,
     description:
       'Realizamos la instalación de la versión del Software que el cliente requiera.'
   }
@@ -55,12 +76,11 @@ const services = [
   <div class="embla relative">
     <div class="embla__container flex space-x-10">
       {
-        services.map(({ name, description }) => (
-          <div class="embla__slide relative border border-slate-200 w-80 p-4 rounded-md text-marino flex-[0_0_350px]">
-            <span class="relative flex h-2 w-2 mb-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquesa opacity-75" />
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-turquesa" />
-            </span>
+        services.map(({ name, description, Icon }) => (
+          <div class="embla__slide relative border border-slate-200 w-80 p-4 pt-14 rounded-md text-marino flex-[0_0_350px]">
+            <div class="flex border-slate-100 h-16 w-16 aspect-square mb-3 text-cielo absolute -top-4 -left-4 shadow rounded-full bg-white p-3">
+              <Icon />
+            </div>
             <h3 class="font-bold text-md">{name}</h3>
             <p class="text-sm pt-2">{description}</p>
           </div>
