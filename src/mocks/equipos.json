@@ -131,7 +131,28 @@
     "name": "CS AIRWAY MODULE",
     "category": "software",
     "images": ["/equipos/FOTO-41.webp"],
-    "slug": "rvg-5200",
+    "slug": "cs-airway-module",
+    "description": ""
+  },
+  {
+    "name": "CS Imaging versión 8",
+    "category": "software",
+    "images": ["/equipos/FOTO-42.webp"],
+    "slug": "cs-imaging-version-8",
+    "description": ""
+  },
+  {
+    "name": "CS 3D Imaging",
+    "category": "software",
+    "images": ["/equipos/FOTO-43.webp"],
+    "slug": "cs-3d-imaging",
+    "description": ""
+  },
+  {
+    "name": "CS 8100 & CS 8100 3D Families",
+    "category": "software",
+    "images": ["/equipos/FOTO-44.webp"],
+    "slug": "cs-8100-&-cs-8100-3d-families",
     "description": ""
   }
 ]

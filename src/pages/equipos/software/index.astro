@@ -21,9 +21,10 @@ const currentProducts = products.filter(
       {
         currentProducts.map(({ images, name, slug }) => (
           <a
-            href={`/equipos/extraorales/${slug}`}
+            href={`/equipos/software/${slug}.pdf`}
             title={`Ver detalles de ${name}`}
             class="bg-white flex flex-col rounded-xl w-64 shadow px-3 py-4"
+            target="_blank"
           >
             <img
               class="w-full h-full aspect-square object-contain"
