@@ -1,42 +1,9 @@
 import { useState, useEffect } from 'preact/hooks'
 import { Menu, Close } from './Icons'
+import { SocialMedia, SocialMediaMobile } from './SocialMedia'
 
 export function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
-  const [showHeader, setShowHeader] = useState('translate-y-0')
-  const [lastScrollY, setLastScrollY] = useState(0)
-
-  const controlHeader = () => {
-    if (window.scrollY > 100) {
-      if (window.scrollY > lastScrollY) {
-        setShowHeader('-translate-y-[72px]')
-      } else {
-        setShowHeader('shadow-sm')
-      }
-    } else {
-      setShowHeader('translate-y-0')
-    }
-
-    setLastScrollY(window.scrollY)
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', controlHeader)
-    return () => window.removeEventListener('scroll', controlHeader)
-  }, [lastScrollY])
-
-  // hidden menu when click on nav links if window width is less than 768px
-  useEffect(() => {
-    const navLinks = document.querySelectorAll('nav ul li a')
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          setMenuIsOpen(false)
-        }
-      })
-    })
-  }, [])
 
   const megaMenu = () => {
     const megaMenuButton = document.getElementById('mega-menu-dropdown-button')
@@ -68,9 +35,7 @@ export function Header() {
   })
 
   return (
-    <header
-      className={`w-full fixed bg-white z-20 top-0 transition-all duration-500 ${showHeader} animate-in fade-in duration-1000`}
-    >
+    <header className="w-full fixed bg-white z-20 top-0 transition-all duration-500 animate-in fade-in">
       <div class="container w-full flex h-[72px] justify-between p-2 md:py-2 lg:px-0 items-center mx-auto">
         <a
           href="/"
@@ -169,23 +134,13 @@ export function Header() {
               </div>
             </li>
 
-            <li className="md:hidden font-medium hover:text-cielo/80 transition-colors duration-300 w-full flex justify-center mt-4">
-              <a
-                href="tel:573184165736"
-                className="font-medium px-3 py-2 w-full max-w-max inline-block text-center bg-cielo rounded-md text-white hover:bg-cielo/80 transition-colors duration-300"
-              >
-                (+57) 3184165736
-              </a>
+            <li className="md:hidden w-full h-10 mt-4">
+              <SocialMediaMobile />
             </li>
           </ul>
         </nav>
 
-        <a
-          href="tel:573184165736"
-          className="hidden md:block font-medium px-3 py-2 bg-cielo rounded-md text-white hover:bg-cielo/80 transition-colors duration-300"
-        >
-          (+57) 3184165736
-        </a>
+        <SocialMedia />
 
         <button
           className={`md:hidden flex-shrink-0 w-8 h-8 tex-black flex items-center justify-center border-none outline-none appearance-none ${
