@@ -15,23 +15,159 @@ const { name, images } = Astro.props
       alt={`puede ser una imagen del equipo medico ${name}`}
     />
   ) : (
-    <div class="swiper swiperProducts w-full max-w-md max-h-96 overflow-hidden">
-      <div class="swiper-wrapper">
-        {images.map(img => (
-          <div class="swiper-slide">
-            <img
-              class="w-ful h-full py-5 lg:py-0 md:w-96 md:h-96 object-contain mix-blend-multiply mx-auto rounded-lg shadow-sm select-none"
-              src={img}
-              alt={`puede ser una imagen del equipo medico ${name}`}
-            />
-          </div>
-        ))}
+    <div class="embla product w-full max-w-md  relative mx-auto">
+      <div class="embla__viewport">
+        <div class="embla__container">
+          {images.map(img => (
+            <div class="embla__slide cursor-grab">
+              <img
+                class="embla__slide__img w-ful py-5 lg:py-0 md:w-96 md:h-96 h-full aspect-square object-contain mx-auto rounded-lg shadow-sm select-none"
+                src={img}
+                alt={`puede ser una imagen del equipo medico ${name}`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div id="swiperProducts" class="swiper-pagination md:hidden" />
-      <div class="swiper-button-prev text-marino hidden md:block" />
-      <div class="swiper-button-next text-marino hidden md:block" />
+
+      <div class="embla__dots" />
     </div>
   )
 }
 
-<script src="/swiper.js" is:inline type="module"></script>
+<style is:global>
+  .embla.product {
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    --slide-height: 100%;
+    padding: 1.6rem;
+  }
+  .embla.product .embla__viewport {
+    overflow: hidden;
+  }
+  .embla.product .embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+  .embla.product .embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+    position: relative;
+  }
+  .embla.product .embla__slide__img {
+    display: block;
+    height: var(--slide-height);
+    width: 100%;
+  }
+  .embla.product .embla__dot {
+    -webkit-appearance: none;
+    background-color: transparent;
+    touch-action: manipulation;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .embla.product .embla__dots {
+    z-index: 1;
+    bottom: -1.4rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .embla.product .embla__dot {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+  }
+  .embla.product .embla__dot:after {
+    background: #000;
+    border-radius: 0.2rem;
+    width: 100%;
+    height: 0.3rem;
+    content: '';
+  }
+  .embla.product .embla__dot--selected:after {
+    background: linear-gradient(45deg, rgb(138, 180, 248), rgb(193, 168, 226));
+  }
+</style>
+
+<script>
+  import EmblaCarousel from 'embla-carousel'
+  import Autoplay from 'embla-carousel-autoplay'
+
+  const OPTIONS = { loop: true }
+
+  const emblaNode = document.querySelector('.embla.product')
+  const viewportNode = emblaNode.querySelector('.embla__viewport')
+  const dotsNode = document.querySelector('.embla__dots')
+  const emblaApi = EmblaCarousel(viewportNode, OPTIONS, [Autoplay()])
+
+  export const addDotBtnsAndClickHandlers = (
+    emblaApi,
+    dotsNode,
+    onButtonClick
+  ) => {
+    let dotNodes = []
+
+    const addDotBtnsWithClickHandlers = () => {
+      dotsNode.innerHTML = emblaApi
+        .scrollSnapList()
+        .map(() => '<button class="embla__dot" type="button"></button>')
+        .join('')
+
+      const scrollTo = index => {
+        emblaApi.scrollTo(index)
+        if (onButtonClick) onButtonClick(emblaApi)
+      }
+
+      dotNodes = Array.from(dotsNode.querySelectorAll('.embla__dot'))
+      dotNodes.forEach((dotNode, index) => {
+        dotNode.addEventListener('click', () => scrollTo(index), false)
+      })
+    }
+
+    const toggleDotBtnsActive = () => {
+      const previous = emblaApi.previousScrollSnap()
+      const selected = emblaApi.selectedScrollSnap()
+      dotNodes[previous].classList.remove('embla__dot--selected')
+      dotNodes[selected].classList.add('embla__dot--selected')
+    }
+
+    emblaApi
+      .on('init', addDotBtnsWithClickHandlers)
+      .on('reInit', addDotBtnsWithClickHandlers)
+      .on('init', toggleDotBtnsActive)
+      .on('reInit', toggleDotBtnsActive)
+      .on('select', toggleDotBtnsActive)
+
+    return () => {
+      dotsNode.innerHTML = ''
+    }
+  }
+
+  const onButtonClick = emblaApi => {
+    const { autoplay } = emblaApi.plugins()
+    if (!autoplay) return
+    if (autoplay.options.stopOnInteraction !== false) autoplay.stop()
+  }
+
+  const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
+    emblaApi,
+    dotsNode,
+    onButtonClick
+  )
+
+  emblaApi.on('destroy', removeDotBtnsAndClickHandlers)
+</script>
