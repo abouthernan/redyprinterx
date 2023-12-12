@@ -1,10 +1,7 @@
 ---
 import Wrapper from './Wrapper.astro'
 import { Facebook, Instagram, Twitter } from './Icons'
-
-const facebookUser = 'user'
-const twitterUser = 'user'
-const instagramUser = 'user'
+import { socialMedia } from '../constants/index'
 ---
 
 <footer class="bg-marino text-white pt-14 pb-3 mt-20">
@@ -105,26 +102,26 @@ const instagramUser = 'user'
       class="flex gap-4 justify-center lg:justify-start pt-0 md:pt-10 lg:pt-0"
     >
       <a
-        href={`https://facebook.com/${facebookUser}`}
+        href={socialMedia.facebook}
         target="_blank"
         title="facebook"
-        class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
+        class="w-10 h-10 text-marino p-2 rounded-full bg-white flex items-center justify-center hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
       >
         <Facebook />
       </a>
       <a
-        href={`https://twitter.com/${twitterUser}`}
+        href={socialMedia.twitter}
         target="_blank"
         title="twitter"
-        class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
+        class="w-10 h-10 text-marino p-2 rounded-full bg-white flex items-center justify-center hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
       >
         <Twitter />
       </a>
       <a
-        href={`https://instagram.com/${instagramUser}`}
+        href={socialMedia.instagram}
         target="_blank"
         title="instagram"
-        class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
+        class="w-10 h-10 text-marino p-2 rounded-full bg-white flex items-center justify-center hover:bg-white/[0.8] cursor-pointer transition-colors duration-300"
       >
         <Instagram />
       </a>
