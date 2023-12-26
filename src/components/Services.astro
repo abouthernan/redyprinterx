@@ -73,7 +73,7 @@ const services = [
   class="container bg-white rounded-t-3xl block mx-auto mb-28 overflow-hidden pt-4 mt-20"
   id="services"
 >
-  <div class="embla relative">
+  <div class="embla embla_services relative">
     <div class="embla__container flex space-x-10">
       {
         services.map(({ name, description, Icon }) => (
@@ -131,7 +131,7 @@ const services = [
   import Autoplay from 'embla-carousel-autoplay'
 
   document.addEventListener('DOMContentLoaded', () => {
-    const emblaNode = document.querySelector('.embla')
+    const emblaNode = document.querySelector('.embla_services')
     const prevButtonNode = emblaNode.querySelector('.embla__prev')
     const nextButtonNode = emblaNode.querySelector('.embla__next')
 
